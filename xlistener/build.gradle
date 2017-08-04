@@ -29,9 +29,9 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'xlistener'
 
-    publishedGroupId = 'com.qbw.util'
+    publishedGroupId = 'com.qbw.util.xlistener'
     libraryName = 'xlistener'
-    artifact = 'xlistenermanager'
+    artifact = 'xlistener'
 
     libraryDescription = 'Listener manager.'
 
