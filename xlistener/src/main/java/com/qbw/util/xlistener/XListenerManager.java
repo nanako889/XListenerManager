@@ -1,11 +1,5 @@
 package com.qbw.util.xlistener;
 
-/**
- * @author qinbaowei
- * @date 2017/6/27
- * @email qbaowei@qq.com
- */
-
 public class XListenerManager extends ListenerManager<XListenerManager.XListener> {
 
     private static XListenerManager sInst;
