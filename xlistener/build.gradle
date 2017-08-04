@@ -24,3 +24,31 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'xlistener'
+
+    publishedGroupId = 'com.qbw.util'
+    libraryName = 'xlistener'
+    artifact = 'xlistenermanager'
+
+    libraryDescription = 'Listener manager.'
+
+    siteUrl = 'https://github.com/qbaowei/XListenerManager'
+    gitUrl = 'https://github.com/qbaowei/XListenerManager'
+
+    libraryVersion = '1.0'
+
+    developerId = 'qinbaowei'
+    developerName = 'qinbaowei'
+    developerEmail = 'qbaowei@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    apply from: 'bintray_install.gradle'
+    apply from: 'bintray_upload.gradle'
+}
+
