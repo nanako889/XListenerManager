@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.qbw.util.xlistener.XListenerManager;
 
-public class MainActivity extends Activity implements XListenerManager.XListener {
+public class MainActivity extends Activity implements XListenerManager.XListener2 {
 
     protected TextView mTxt;
 
@@ -26,6 +26,7 @@ public class MainActivity extends Activity implements XListenerManager.XListener
                         @Override
                         public void run() {
                             XListenerManager.getInstance().notify(j);
+                            XListenerManager.getInstance().notify2("here" + j, j);
                         }
                     });
                     try {
@@ -54,5 +55,10 @@ public class MainActivity extends Activity implements XListenerManager.XListener
 
     private void initView() {
         mTxt = (TextView) findViewById(R.id.txt);
+    }
+
+    @Override
+    public void onXListen2(Object type, Object o) {
+        Log.w("onXListen2", type + "---" + o);
     }
 }

@@ -23,7 +23,19 @@ public class XListenerManager extends ListenerManager<XListenerManager.XListener
         }
     }
 
+    public void notify2(Object type, Object o) {
+        for (XListener listener : getListeners()) {
+            if (listener instanceof XListener2) {
+                ((XListener2) listener).onXListen2(type, o);
+            }
+        }
+    }
+
     public interface XListener {
         void onXListen(Object o);
+    }
+
+    public interface XListener2 extends XListener {
+        void onXListen2(Object type, Object o);
     }
 }
