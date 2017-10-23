@@ -42,8 +42,10 @@ public class XListenerManager {
     public void notify(Object o) {
         synchronized (mListeners) {
             int s = mListeners.size();
-            for (int i = 0; i < s; i++) {
-                mListeners.get(i).onXListen(o);
+            for (int i = s - 1; i >= 0; i--) {
+                if (mListeners.get(i).onXListen(o)) {
+                    break;
+                }
             }
         }
     }
@@ -52,20 +54,22 @@ public class XListenerManager {
         synchronized (mListeners) {
             XListener listener;
             int s = mListeners.size();
-            for (int i = 0; i < s; i++) {
+            for (int i = s - 1; i >= 0; i--) {
                 listener = mListeners.get(i);
                 if (listener instanceof XListener2) {
-                    ((XListener2) listener).onXListen2(type, o);
+                    if (((XListener2) listener).onXListen2(type, o)) {
+                        break;
+                    }
                 }
             }
         }
     }
 
     public interface XListener {
-        void onXListen(Object o);
+        boolean onXListen(Object o);
     }
 
     public interface XListener2 extends XListener {
-        void onXListen2(Object type, Object o);
+        boolean onXListen2(Object type, Object o);
     }
 }

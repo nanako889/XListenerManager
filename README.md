@@ -1,4 +1,4 @@
 # XListenerManager
 
 # Gradle
-    compile 'com.qbw.util.xlistener:xlistener:1.1.3'
+    compile 'com.qbw.util.xlistener:xlistener:2.0'

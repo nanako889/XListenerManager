@@ -47,10 +47,11 @@ public class MainActivity extends Activity implements XListenerManager.XListener
     }
 
     @Override
-    public void onXListen(Object o) {
+    public boolean onXListen(Object o) {
         if (o instanceof Integer) {
             mTxt.setText(o.toString());
         }
+        return false;
     }
 
     private void initView() {
@@ -58,7 +59,8 @@ public class MainActivity extends Activity implements XListenerManager.XListener
     }
 
     @Override
-    public void onXListen2(Object type, Object o) {
+    public boolean onXListen2(Object type, Object o) {
         Log.w("onXListen2", type + "---" + o);
+        return false;
     }
 }
