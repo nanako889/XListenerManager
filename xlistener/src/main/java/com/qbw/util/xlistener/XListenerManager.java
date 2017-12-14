@@ -88,7 +88,7 @@ public class XListenerManager {
         boolean onXListen2(Object type, Object o);
     }
 
-    public interface XListener3 extends XListener {
+    public interface XListener3 extends XListener2 {
         boolean onXListen3(Object type, Object o, Object v);
     }
 }
