@@ -65,14 +65,14 @@ public class XListenerManager {
         }
     }
 
-    public void notify3(Object type, Object w, Object o) {
+    public void notify3(Object type, Object o, Object v) {
         synchronized (mListeners) {
             XListener listener;
             int s = mListeners.size();
             for (int i = s - 1; i >= 0; i--) {
                 listener = mListeners.get(i);
                 if (listener instanceof XListener3) {
-                    if (((XListener3) listener).onXListen3(type, w, o)) {
+                    if (((XListener3) listener).onXListen3(type, o, v)) {
                         break;
                     }
                 }
